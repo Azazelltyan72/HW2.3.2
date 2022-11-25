@@ -72,12 +72,16 @@ public class Car {
         this.registrationNumber = registrationNumber;
     }
 
-    public String getTypeOfRubber() {
+    public String getTypeOfRubber(boolean summerTires) {
         return typeOfRubber;
     }
 
-    public void setTypeOfRubber(String typeOfRubber) {
-        this.typeOfRubber = typeOfRubber;
+    public void setTypeOfRubber(boolean summerTires) {
+        if (summerTires == true) {
+            this.typeOfRubber = "Летняя резина";
+        } else {
+            this.typeOfRubber = "Зимняя резина";
+        }
     }
 
     public Car(String brand,
@@ -142,18 +146,18 @@ public class Car {
         } else {
             this.registrationNumber = "х000хх000";
         }
-        if(summerTires == true && !registrationNumber.isEmpty() && !registrationNumber.isBlank()) {
+        if (summerTires == true) {
             this.typeOfRubber = "Летняя резина";
-        }else {
+        } else {
             this.typeOfRubber = "Зимняя резина";
         }
 
     }
 
     public void changeTiresForSeasonalOnes() {
-        if(typeOfRubber == "Зимняя резина") {
+        if (typeOfRubber == "Зимняя резина") {
             typeOfRubber = "Летняя резина";
-        }else {
+        } else {
             typeOfRubber = "Зимняя резина";
         }
     }
@@ -166,7 +170,7 @@ public class Car {
             return false;
         }
         char[] chars = registrationNumber.toCharArray();
-        if (!Character.isAlphabetic(chars[0]) || !Character.isAlphabetic(chars[4]) ||!Character.isAlphabetic(chars[5])){
+        if (!Character.isAlphabetic(chars[0]) || !Character.isAlphabetic(chars[4]) || !Character.isAlphabetic(chars[5])) {
             return false;
         }
         return Character.isDigit(chars[1]) && Character.isDigit(chars[2]) && Character.isDigit(chars[3]) && Character.isDigit(chars[6]) && Character.isDigit(chars[7]) && Character.isDigit(chars[8]);

@@ -4,6 +4,7 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Task 2");
         Car lada = new Car("Лада", "Гранта", "2015", "Россия", 5, "Хетчбэк", "изумрудный","1,5 л", "Автомат", "х000хх000",false);
+        lada.setTypeOfRubber(true);
         lada.changeTiresForSeasonalOnes();
         System.out.println(lada);
         Car audi = new Car("Audi", "A8 50 L TDI quattro", "2020", "Германия",  5, " ","чёрный", "3,0 л", "", "х000хх000",true);
